@@ -1,0 +1,13 @@
+packages
+TPVService/obj
+AccesoDatos/obj
+Dulceria/obj
+DulceriaDataBase/obj
+Entidades/obj
+Logica/obj
+TPVService/bin
+AccesoDatos/bin
+Dulceria/bin
+DulceriaDataBase/bin
+Entidades/bin
+Logica/bin

@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>TPVDatabase</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{0cd8b637-52b8-49b2-92b1-f1f870761eff}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>DulceriaDatabase</RootNamespace>
+    <AssemblyName>DulceriaDatabase</AssemblyName>
+    <ModelCollation>3082,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Modern_Spanish_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <GenerateCreateScript>False</GenerateCreateScript>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\detalleTicket.sql" />
+    <Build Include="dbo\Tables\Movimiento.sql" />
+    <Build Include="dbo\Tables\MovimientoDetalle.sql" />
+    <Build Include="dbo\Tables\productos.sql" />
+    <Build Include="dbo\Tables\ticket.sql" />
+    <Build Include="dbo\Tables\tipoMovimiento.sql" />
+    <Build Include="dbo\Tables\unidadMedida.sql" />
+    <Build Include="dbo\Tables\usuarios.sql" />
+    <Build Include="dbo\Views\ReporteVenta.sql" />
+    <Build Include="dbo\Views\UltimoTicket.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_detalleTicket_SelectAll.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_detalleTicket_Select.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_detalleTicket_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_detalleTicket_Update.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_detalleTicket_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_Movimiento_SelectAll.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_Movimiento_Select.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_Movimiento_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_Movimiento_Update.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_Movimiento_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_MovimientoDetalle_SelectAll.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_MovimientoDetalle_Select.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_MovimientoDetalle_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_MovimientoDetalle_Update.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_MovimientoDetalle_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_productos_SelectAll.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_productos_Select.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_productos_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_productos_Update.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_productos_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_ticket_SelectAll.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_ticket_Select.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_ticket_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_ticket_Update.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_ticket_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_tipoMovimiento_SelectAll.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_tipoMovimiento_Select.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_tipoMovimiento_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_tipoMovimiento_Update.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_tipoMovimiento_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_unidadMedida_SelectAll.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_unidadMedida_Select.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_unidadMedida_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_unidadMedida_Update.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_unidadMedida_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_usuarios_SelectAll.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_usuarios_Select.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_usuarios_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_usuarios_Update.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_usuarios_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_Venta_RollBack.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_UltimoTicket.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_TicketById.sql" />
+    <Build Include="dbo\Stored Procedures\D_PR_detalleTicket_byIdTicket.sql" />
+    <Build Include="dbo\Views\Devoluciones.sql" />
+    <Build Include="dbo\Views\Existencias.sql" />
+  </ItemGroup>
+</Project>
